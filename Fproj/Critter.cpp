@@ -463,7 +463,7 @@ Player::Player(int type) :
 		Sleep(2000);
 		cout << "You point to the door ahead of you 'There!'.\nThe demon runs towards the door." << endl;
 		Sleep(2000);
-		cout << "You realise you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
+		cout << "You realize you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
 		cout << "\nWhat will you name your first servant?" << endl;
 		cout << "Name: ";
 		string name;
@@ -481,7 +481,7 @@ Player::Player(int type) :
 		Sleep(2000);
 		cout << "You point to the door ahead of you 'There!'.\nThe skeleton runs towards the door." << endl;
 		Sleep(2000);
-		cout << "You realise you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
+		cout << "You realize you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
 		cout << "\nWhat will you name your first servant?" << endl;
 		cout << "Name: ";
 		string name;
@@ -498,7 +498,7 @@ Player::Player(int type) :
 		Sleep(2000);
 		cout << "You point to the door ahead of you 'There!'.\nThe spirit runs towards the door." << endl;
 		Sleep(2000);
-		cout << "You realise you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
+		cout << "You realize you are no longer speaking in English, this must be the work of the book.\nWhatever the case, you need to find a way out of here. And the only door out is ahead of you" << endl;
 		cout << "\nWhat will you name your first servant?" << endl;
 		cout << "Name: ";
 		string name;
@@ -541,8 +541,10 @@ void Player::GiveXP()
 
 void Player::GetKey()
 {
-	cout << "\nYou have obtained one of the six pieces of the 'Glyph of Redemption'" << endl;
-	m_Keys++;
+	if (!m_pMonsters->empty()) {
+		cout << "\nYou have obtained one of the six pieces of the 'Glyph of Redemption'" << endl;
+		m_Keys++;
+	}
 }
 
 int Player::KeyCount()
